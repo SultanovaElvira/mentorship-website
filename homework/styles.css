@@ -200,6 +200,30 @@ cite {
   
 }
 
-input{
-  
+.open-close-search{
+  display: flex;
+  justify-content: space-between
+
+}
+
+.open-close-search input[type="submit"]{
+  background-color: #ff3980;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  height: 40px;
+  width: 120px;
+  margin: 20px 20px 20px 5px;
+
+}
+
+.open-close-search input[type="text"]{
+border:1px solid #ff3980;
+width: 150px;
+height: 40px;
+border-radius: 5px;
+}
+
+.red{
+  color:red
 }
