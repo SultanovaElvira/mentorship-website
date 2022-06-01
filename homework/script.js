@@ -83,9 +83,7 @@ const createFaqDataContainer = (faqEntryData, faqContainer) => {
   entryContainer.append(entryAnswer);
 
   faqContainer.append(entryContainer);
-//END: create container
-
-
+  //END: create container
 
   //START: adding ability to open/close questions
   const answerVisibility = (entryAnswer, entryQuestion) => {
@@ -125,10 +123,8 @@ const faqList = () => {
 faqList();
 //END: adding container to html
 
-
 const answers = document.querySelectorAll(".answer");
 const questions = document.querySelectorAll(".question");
-
 
 //START: opening all answers by clicking on questions/answers
 const openAllQuestionsBtn = document.querySelectorAll(".button")[1];
@@ -155,30 +151,29 @@ openAllQuestionsBtn.onclick = () => {
 };
 //END: opening all answers by clicking on questions/answers
 
-
 // START: search place
 const searchPlace = document.getElementById("search");
-const clearSearchBtn = document.querySelector("[type='submit']");
+const clearBtn = document.querySelector("[type='submit']");
 const faqSentences = document.querySelectorAll(".faq");
 const question = document.querySelectorAll(".question");
+let filteredData = [];
 
-searchPlace.addEventListener("keyup", () => {
-  const searchText = searchPlace.value;
+searchPlace.addEventListener("keyup", function () {
   const faqContainer = document.getElementById("faq-container");
-  // const filterData = faqData.filter((item) => {
-  // item.answer.includes(searchText) ||
-  //   item.question.includes(searchText);
-  // });
+  const searchText = searchPlace.value.toLowerCase();
 
-  faqSentences.forEach((sentence) => {
-    if (sentence.textContent.includes(searchText)) {
-      console.log(sentence);
-      // faqContainer.innerHTML = "";
+  filteredData = faqData.filter(
+    (sentence) =>
+      sentence.answer.toLowerCase().includes(searchText) ||
+      sentence.question.toLowerCase().includes(searchText)
+  );
 
-      createFaqDataContainer(sentence.textContent, faqContainer);
-    }
+  faqContainer.innerHTML = "";
+  filteredData.forEach((data) => {
+    createFaqDataContainer(data, faqContainer);
   });
 });
 
 // END: search place
 
+//START: functionality of CLEAR button
