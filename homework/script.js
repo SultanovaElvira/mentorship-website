@@ -63,6 +63,7 @@ The lorem ipsum is a placeholder text used in publishing and graphic design. Thi
 >`,
   },
 ];
+
 //START: create container
 const createFaqDataContainer = (faqEntryData, faqContainer) => {
   const { question, answer } = faqEntryData;
@@ -157,9 +158,11 @@ const clearBtn = document.querySelector("[type='submit']");
 const faqSentences = document.querySelectorAll(".faq");
 const question = document.querySelectorAll(".question");
 let filteredData = [];
+const faqContainer = document.getElementById("faq-container");
+
+
 
 searchPlace.addEventListener("keyup", function () {
-  const faqContainer = document.getElementById("faq-container");
   const searchText = searchPlace.value.toLowerCase();
 
   filteredData = faqData.filter(
@@ -177,3 +180,13 @@ searchPlace.addEventListener("keyup", function () {
 // END: search place
 
 //START: functionality of CLEAR button
+clearBtn.onclick = (e) => {
+  e.preventDefault();
+
+  if (searchPlace.value !== "") {
+    searchPlace.value = "";
+    // createFaqDataContainer(faqSentences, faqContainer);
+  }
+};
+
+//END: functionality of CLEAR button
