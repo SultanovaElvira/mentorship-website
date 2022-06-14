@@ -1,0 +1,62 @@
+@use "mixins.scss" as mixins;
+@use "variables.scss" as variables;
+
+.learn-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+
+.button {
+  @include mixins.btnSize();
+  background-color: variables.$primaryColor;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  margin: 20px;
+
+  &:hover {
+    @include mixins.hoverBtns()
+  }
+}
+
+.apply {
+  @include mixins.btnSize();
+  background-color: variables.$primaryColor;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  
+  &:hover {
+    @include mixins.hoverBtns()
+  }
+}
+
+.open-close-search{
+  display: flex;
+  justify-content: space-between;
+
+  & input[type="submit"]{
+    @include mixins.btnSize();
+    
+    background-color: variables.$primaryColor;
+    border-radius: 5px;
+    color: white;
+    border: 0;
+ 
+    margin: 20px 20px 20px 5px;
+  
+    &:hover{
+      @include mixins.hoverBtns();
+    }
+  }
+
+  & input[type="text"]{
+    border:1px solid variables.$primaryColor;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    }
+}

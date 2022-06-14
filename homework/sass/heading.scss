@@ -1,0 +1,23 @@
+@use "variables.scss" as variables;
+
+h4 {
+  color: variables.$primaryColor;
+  margin: 20px;
+  font-size: 22px;
+}
+
+.heading {
+  background-image: url(https://image.shutterstock.com/shutterstock/photos/362520884/display_1500/stock-vector-dark-blue-pink-light-abstract-technology-background-for-computer-graphic-website-internet-and-362520884.jpg);
+  background-position: center;
+  text-align: center;
+  padding: 125px;
+
+  &-paragraph {
+    text-indent: 20px;
+  }
+}
+
+.program-name {
+  font-size: 40px;
+  margin: 0;
+}

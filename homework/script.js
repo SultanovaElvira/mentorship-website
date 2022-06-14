@@ -89,6 +89,8 @@ const createFaqDataContainer = (faqEntryData, faqContainer) => {
   //START: adding ability to open/close questions
   const answerVisibility = (entryAnswer, entryQuestion) => {
     const isVisible = entryAnswer.className.includes(visible);
+    const visibleAnswers = document.querySelectorAll(".answer-visible");
+    const visibleQuestions = document.querySelectorAll(".bottom");
 
     if (isVisible) {
       entryAnswer.className = `answer ${hidden}`;
@@ -97,7 +99,16 @@ const createFaqDataContainer = (faqEntryData, faqContainer) => {
       entryAnswer.className = `answer ${visible}`;
       entryQuestion.className = "question chevron bottom";
     }
+
+    visibleAnswers.forEach((answer) => {
+      answer.className = `answer ${hidden}`;
+    });
+
+    visibleQuestions.forEach((question) => {
+      question.className = "question chevron right";
+    });
   };
+
   entryQuestion.onclick = () => {
     answerVisibility(entryAnswer, entryQuestion);
   };
@@ -127,7 +138,7 @@ faqList();
 const answers = document.querySelectorAll(".answer");
 const questions = document.querySelectorAll(".question");
 
-//START: opening all answers by clicking on questions/answers
+//START: opening all answers by clicking on questions/answers button
 const openAllQuestionsBtn = document.querySelectorAll(".button")[1];
 openAllQuestionsBtn.onclick = () => {
   answers.forEach((answer) => {
@@ -150,7 +161,7 @@ openAllQuestionsBtn.onclick = () => {
     }
   });
 };
-//END: opening all answers by clicking on questions/answers
+//END: opening all answers by clicking on questions/answers button
 
 // START: search place
 const searchPlace = document.getElementById("search");
@@ -160,9 +171,7 @@ const question = document.querySelectorAll(".question");
 let filteredData = [];
 const faqContainer = document.getElementById("faq-container");
 
-
-
-searchPlace.addEventListener("keyup", function () {
+function searchPlaceKeyUp() {
   const searchText = searchPlace.value.toLowerCase();
 
   filteredData = faqData.filter(
@@ -175,7 +184,9 @@ searchPlace.addEventListener("keyup", function () {
   filteredData.forEach((data) => {
     createFaqDataContainer(data, faqContainer);
   });
-});
+}
+
+searchPlace.addEventListener("keyup", searchPlaceKeyUp);
 
 // END: search place
 
@@ -185,7 +196,16 @@ clearBtn.onclick = (e) => {
 
   if (searchPlace.value !== "") {
     searchPlace.value = "";
-    // createFaqDataContainer(faqSentences, faqContainer);
+    faqContainer.innerHTML = "";
+    searchPlaceKeyUp();
+
+    /*or can be solved with:  
+    // faqData.forEach((faqEntryData) => {
+    //   createFaqDataContainer(faqEntryData, faqContainer);
+    // })*/
+
+    /*or can be solved with:   
+    //trigger on keyup event:   searchPlace.dispatchEvent(new KeyboardEvent("keyup"))*/
   }
 };
 

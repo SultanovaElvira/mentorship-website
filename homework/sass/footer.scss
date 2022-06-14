@@ -1,0 +1,61 @@
+@use "variables.scss" as variables;
+@use "mixins.scss" as mixins;
+
+
+footer {
+  text-align: center;
+}
+
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-block {
+    background-image: url(imgs/background.jpeg);
+    color: white;
+    padding: 50px;
+    margin-bottom: 60px;
+  };
+  &-sentence {
+    font-size: 20px;
+    order: 2;
+  }
+  
+}
+
+
+cite {
+  font-style: normal;
+  color: variables.$primaryColor;
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+
+.quote {
+  margin-bottom: 20px;
+}
+
+.fab {
+  color: white;
+  font-size: 50px;
+  /* border: 0px solid white */
+  background-color: transparent;
+}
+
+.made-by {
+  background-image: url(imgs/background.jpeg);
+  color: rgb(253, 188, 188);
+  padding: 7px;
+  font-size: 10px;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+}
+
+.heart,
+.creator-name {
+  color: variables.$primaryColor;
+}

@@ -1,11 +1,16 @@
-/* * {
-  font-family: 'Poppins', sans-serif;
-} */
+* {
+  font-family: "Poppins", sans-serif;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  margin: 2px;
+  letter-spacing: 1px;
+  font-family: "Poppins", sans-serif;
+}
 
 h4 {
   color: #ff3980;
@@ -13,10 +18,133 @@ h4 {
   font-size: 22px;
 }
 
-body {
-  margin: 2px;
-  letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
+.heading {
+  background-image: url(https://image.shutterstock.com/shutterstock/photos/362520884/display_1500/stock-vector-dark-blue-pink-light-abstract-technology-background-for-computer-graphic-website-internet-and-362520884.jpg);
+  background-position: center;
+  text-align: center;
+  padding: 125px;
+}
+.heading-paragraph {
+  text-indent: 20px;
+}
+
+.program-name {
+  font-size: 40px;
+  margin: 0;
+}
+
+.learn-btn {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button {
+  height: 40px;
+  width: 120px;
+  background-color: #ff3980;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  margin: 20px;
+}
+.button:hover {
+  color: black;
+  border: 1px solid #ff3980;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.apply {
+  height: 40px;
+  width: 120px;
+  background-color: #ff3980;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+}
+.apply:hover {
+  color: black;
+  border: 1px solid #ff3980;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.open-close-search {
+  display: flex;
+  justify-content: space-between;
+}
+.open-close-search input[type=submit] {
+  height: 40px;
+  width: 120px;
+  background-color: #ff3980;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  margin: 20px 20px 20px 5px;
+}
+.open-close-search input[type=submit]:hover {
+  color: black;
+  border: 1px solid #ff3980;
+  background-color: white;
+  transition: 0.3s;
+}
+.open-close-search input[type=text] {
+  border: 1px solid #ff3980;
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.chevron:before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.4em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+  margin-right: 15px;
+}
+
+.right:before {
+  left: 0px;
+  transform: rotate(45deg);
+}
+
+.bottom:before {
+  top: 6px;
+  transform: rotate(135deg);
+}
+
+.question {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.question:hover {
+  outline: 1px solid #ff3980;
+  border-radius: 3px;
+}
+.question-container {
+  margin: 20px 0px;
+}
+
+.answer {
+  padding-left: 40px;
+}
+.answer p {
+  margin-top: 0;
+}
+.answer-hidden {
+  display: none;
+}
+.answer-visible {
+  display: initial;
 }
 
 i {
@@ -27,85 +155,27 @@ footer {
   text-align: center;
 }
 
-cite {
-  font-style: normal;
-  color: #ff3980;
-  font-size: 10px;
-  text-decoration: underline;
-}
-
-.heading {
-  background-image: url(https://image.shutterstock.com/shutterstock/photos/362520884/display_1500/stock-vector-dark-blue-pink-light-abstract-technology-background-for-computer-graphic-website-internet-and-362520884.jpg);
-
-  background-position: center;
-
-  /* color: black; */
-  text-align: center;
-  padding: 125px;
-}
-
-.program-name {
-  font-size: 40px;
-  margin: 0;
-}
-
-.heading-paragraph {
-  text-indent: 20px;
-}
-
-.button:hover,
-.apply:hover {
-  color: black;
-  border: 1px solid #ff3980;
-  background-color: white;
-  transition: 0.3s;
-}
-
-.button {
-  background-color: #ff3980;
-  border-radius: 5px;
-  color: white;
-  border: 0;
-  height: 40px;
-  width: 120px;
-  margin: 20px;
-}
-
-#main-part {
-  margin: 20px 80px 20px 80px;
-}
-
-.learn-btn {
+.video {
   display: flex;
-  justify-content: center;
-  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
 }
-
 .video-block {
   background-image: url(imgs/background.jpeg);
   color: white;
   padding: 50px;
   margin-bottom: 60px;
 }
-
-.video {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sentence-to-video {
+.video-sentence {
   font-size: 20px;
   order: 2;
 }
 
-.apply {
-  background-color: #ff3980;
-  border-radius: 5px;
-  color: white;
-  border: 0;
-  height: 40px;
-  width: 120px;
+cite {
+  font-style: normal;
+  color: #ff3980;
+  font-size: 10px;
+  text-decoration: underline;
 }
 
 .quote {
@@ -134,96 +204,4 @@ cite {
   color: #ff3980;
 }
 
-
-.question{
-  font-weight:bold;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.question:hover{
-  /* border-color: */
-  /* border:#ff3980 */
-  outline: 1px solid  #ff3980;
-  border-radius: 3px;
-}
-
-.answer{
-  padding-left: 40px;
-}
-
-.answer p {
-  margin-top: 0;
-}
-
-.answer-hidden{
-  display: none;
-}
-
-.answer-visible{
-  display: initial;
- 
-}
-
-.question-container{
-  margin: 20px 0px;
-}
-
-
-/* Chevron start*/
-
-.chevron:before {
-	border-style: solid;
-	border-width: 0.25em 0.25em 0 0;
-	content: '';
-	display: inline-block;
-	height: 0.45em;
-	left: 0.15em;
-	position: relative;
-	top: 0.4em;
-	transform: rotate(-45deg);
-	vertical-align: top;
-	width: 0.45em;
-  margin-right: 15px
-
-}
-
-.right:before{
-  left: 0px;
-	transform: rotate(45deg);
-
-}
-
-.bottom:before{
-	top: 6px;
-	transform: rotate(135deg);
-  
-}
-
-.open-close-search{
-  display: flex;
-  justify-content: space-between
-
-}
-
-.open-close-search input[type="submit"]{
-  background-color: #ff3980;
-  border-radius: 5px;
-  color: white;
-  border: 0;
-  height: 40px;
-  width: 120px;
-  margin: 20px 20px 20px 5px;
-
-}
-
-.open-close-search input[type="text"]{
-border:1px solid #ff3980;
-width: 150px;
-height: 40px;
-border-radius: 5px;
-}
-
-.red{
-  color:red
-}
+/*# sourceMappingURL=styles.css.map */

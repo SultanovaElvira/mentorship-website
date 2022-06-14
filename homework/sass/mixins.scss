@@ -1,0 +1,14 @@
+@use "variables.scss" as variables;
+
+@mixin btnSize{
+  height: 40px;
+  width: 120px;
+}
+
+
+@mixin hoverBtns{
+  color: black;
+  border: 1px solid variables.$primaryColor;
+  background-color: white;
+  transition: 0.3s;
+}
