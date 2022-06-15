@@ -165,7 +165,7 @@ openAllQuestionsBtn.onclick = () => {
 
 // START: search place
 const searchPlace = document.getElementById("search");
-const clearBtn = document.querySelector("[type='submit']");
+const clearBtn = document.querySelector(".clear");
 const faqSentences = document.querySelectorAll(".faq");
 const question = document.querySelectorAll(".question");
 let filteredData = [];

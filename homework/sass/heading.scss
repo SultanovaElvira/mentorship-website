@@ -10,7 +10,8 @@ h4 {
   background-image: url(https://image.shutterstock.com/shutterstock/photos/362520884/display_1500/stock-vector-dark-blue-pink-light-abstract-technology-background-for-computer-graphic-website-internet-and-362520884.jpg);
   background-position: center;
   text-align: center;
-  padding: 125px;
+
+  padding-bottom: 100px;
 
   &-paragraph {
     text-indent: 20px;
@@ -19,5 +20,5 @@ h4 {
 
 .program-name {
   font-size: 40px;
-  margin: 0;
+  margin: 45px;
 }

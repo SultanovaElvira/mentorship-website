@@ -22,7 +22,7 @@ h4 {
   background-image: url(https://image.shutterstock.com/shutterstock/photos/362520884/display_1500/stock-vector-dark-blue-pink-light-abstract-technology-background-for-computer-graphic-website-internet-and-362520884.jpg);
   background-position: center;
   text-align: center;
-  padding: 125px;
+  padding-bottom: 100px;
 }
 .heading-paragraph {
   text-indent: 20px;
@@ -30,13 +30,7 @@ h4 {
 
 .program-name {
   font-size: 40px;
-  margin: 0;
-}
-
-.learn-btn {
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
+  margin: 45px;
 }
 
 .button {
@@ -49,10 +43,11 @@ h4 {
   margin: 20px;
 }
 .button:hover {
-  color: black;
+  color: #ff3980;
   border: 1px solid #ff3980;
   background-color: white;
   transition: 0.3s;
+  border-radius: 5px;
 }
 
 .apply {
@@ -64,30 +59,27 @@ h4 {
   border: 0;
 }
 .apply:hover {
-  color: black;
+  color: #ff3980;
   border: 1px solid #ff3980;
   background-color: white;
   transition: 0.3s;
+  border-radius: 5px;
+}
+
+.learn-btn {
+  margin: 20px auto;
+  display: block;
 }
 
 .open-close-search {
   display: flex;
   justify-content: space-between;
 }
-.open-close-search input[type=submit] {
-  height: 40px;
-  width: 120px;
-  background-color: #ff3980;
-  border-radius: 5px;
-  color: white;
-  border: 0;
-  margin: 20px 20px 20px 5px;
+.open-close-search .open-close {
+  height: 50px;
 }
-.open-close-search input[type=submit]:hover {
-  color: black;
-  border: 1px solid #ff3980;
-  background-color: white;
-  transition: 0.3s;
+.open-close-search .clear {
+  margin-left: 0px;
 }
 .open-close-search input[type=text] {
   border: 1px solid #ff3980;
@@ -169,6 +161,7 @@ footer {
 .video-sentence {
   font-size: 20px;
   order: 2;
+  margin: 20px;
 }
 
 cite {
@@ -202,6 +195,44 @@ cite {
 .heart,
 .creator-name {
   color: #ff3980;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 12px;
+}
+.nav-item {
+  list-style-type: none;
+  padding: 8px;
+}
+.nav-item:hover {
+  color: #ff3980;
+  border: 1px solid #ff3980;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 5px;
+}
+.nav-item a {
+  text-decoration: none;
+  color: #ff3980;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

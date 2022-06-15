@@ -7,8 +7,19 @@
 
 
 @mixin hoverBtns{
-  color: black;
+  color: variables.$primaryColor;
   border: 1px solid variables.$primaryColor;
   background-color: white;
   transition: 0.3s;
+  border-radius: 5px;
+
+}
+
+@mixin buttonStyle{
+
+  background-color: variables.$primaryColor;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  margin: 20px;
 }

@@ -10,12 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    /> -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +22,23 @@
   </head>
 
   <body>
-    <div class="heading">
-      <p class="program-name">Mentorship program</p>
+    <section id="heading" class="heading">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#heading">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#open-close-search">FAQ</a>
+      </li>   <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#video-block">Video</a>
+      </li>   <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#media">Social media</a>
+      </li> 
+    </ul>
+
+    
+  
+      <h1 class="program-name">Mentorship program</h1>
       <h4>6 January - 30 June 2023| Online</h4>
       <p class="heading-paragraph">
         Riga TechGirls mentorship program “TechMentor” gathers professionals in
@@ -36,53 +46,61 @@
         developing their talents, taking their first steps in the IT field or
         advancing their career further in this field.
       </p>
-    </div>
+    </section>
     <!-- добавить расстояние между вопросами -->
-    <div class="buttons">
-    <a
-      href="#main-part"
+
+    <main>
+    <section class="buttons">
+      <h2 class="sr-only">Button to learn more about program</h2>
+    <!-- <a
+      href=""
       rel="noopener noreferrer"
       class="learn-btn"
-      ><button class="button">LEARN MORE</button></a
-    >
-<div class="open-close-search">
-   <button class="button">OPEN/CLOSE QUESTIONS</button></a
+      > -->
+      <button class="button learn-btn"> <a href="#main-part"></a> LEARN MORE</button>
+      <!-- </a -->
+    <!-- > -->
+<section id="open-close-search" class="open-close-search">
+  <h2 class="sr-only">Button to open-close questions</h2>
+   <button class="button open-close">OPEN/CLOSE QUESTIONS</button></a
   >
-
+<h3 class="sr-only">To search by keywords and button to clear search place</h3>
   <form name="search" method="post">
    
     <input type="text" id="search" name="search" placeholder="Search a question">
    
-    <input type="submit" value="Clear" >
+    <button class="button clear">Clear</button>
   </form>
-</div>   
-</div>
+</section>   
+    </section>
 
 
-    <div id="main-part"></div>
+    <section id="main-part"></section> <!--faq part going from js file -->
+  </main>
     <footer>
-      <div class="video-block">
-        <div class= "video">
-        <p class="video-sentence">
+      <section id="video-block" class="video-block">
+        <section class= "video">
+        <h2 class="video-sentence">
           Watch "How coding taught me resilience" :-)
-        </p>
+        </h2>
 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/QBaqxzThFFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-      </div>
+      </section>
 
-        <div class="media">
-          <p>Social media</p>
-          <a href="http://www.facebook.com/RigaTechGirls" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
-         <a href="http://www.instagram.com/rigatechgirls/" target="_blank" rel="noopener noreferrer"> <i class="fab fa-instagram"></i></a>
-         <a href="http://twitter.com/rigatechgirls" target="_blank" rel="noopener noreferrer"> <i class="fab fa-twitter-square"></i></a>
-         <a href="http://www.youtube.com/channel/UCRLScISANNlZzlRGApth9Yg" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <section id="media" class="media">
+          <h3>Social media</h3>
+          <a href="http://www.facebook.com/RigaTechGirls" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-square"></i></a>
+         <a href="http://www.instagram.com/rigatechgirls/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"> <i class="fab fa-instagram"></i></a>
+         <a href="http://twitter.com/rigatechgirls" target="_blank" rel="noopener noreferrer" aria-label="Twitter"> <i class="fab fa-twitter-square"></i></a>
+         <a href="http://www.youtube.com/channel/UCRLScISANNlZzlRGApth9Yg" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
       
-        </div>
+        </section>
 
-      </div>
+      </section>
 
-      <div class="quote">
+      <section class="quote">
+        <h2 class="sr-only">Blockquote from CEO of Youtube</h2>
         <blockquote>
           "Though we do need more women to graduate with technical degrees, I
           always like to remind women that you don't need to have science of
@@ -90,10 +108,10 @@
         </blockquote>
 
         <cite>Susan Wojcicki, CEO of YouTube</cite>
-      </div>
-      
+      </section>
+   
     </footer>
-    <div class="made-by">Made with <span class="heart">&#10084;</span> by <span ><a href="http://github.com/SultanovaElvira/" target="_blank" rel="noopener noreferrer" class="creator-name">Elvira Sultanova</a> </span> </div>
+    <section class="made-by">Made with <span class="heart">&#10084;</span> by <span ><a href="http://github.com/SultanovaElvira/" target="_blank" rel="noopener noreferrer" class="creator-name">Elvira Sultanova</a> </span> </section>
     <script src="script.js"></script>
   </body>
 </html>

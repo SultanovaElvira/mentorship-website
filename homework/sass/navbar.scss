@@ -1,0 +1,37 @@
+@use "variables.scss" as variables;
+@use "mixins.scss" as mixins;
+
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: center;
+  background-color: white;
+  padding-bottom: 12px;
+
+  
+
+  &-item{
+    list-style-type: none;
+    padding: 8px;
+
+    &:hover{
+      @include mixins.hoverBtns();
+      padding: 5px;
+    }
+    
+    a{
+      text-decoration: none;
+      color: variables.$primaryColor;
+  font-size: 20px;
+
+  
+  
+    }
+   
+
+    }
+}
+
