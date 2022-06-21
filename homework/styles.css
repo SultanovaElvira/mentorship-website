@@ -136,7 +136,7 @@ h4 {
   display: none;
 }
 .answer-visible {
-  display: initial;
+  display: block;
 }
 
 i {
@@ -206,6 +206,18 @@ cite {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.question-container {
+  list-style-type: none;
+}
+
+.button-question.question {
+  font-family: inherit;
+  background: transparent;
+  color: #191635;
+  border: 0;
+  text-transform: none;
 }
 
 .nav {

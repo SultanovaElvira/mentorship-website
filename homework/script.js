@@ -65,19 +65,25 @@ The lorem ipsum is a placeholder text used in publishing and graphic design. Thi
 ];
 
 //START: create container
-const createFaqDataContainer = (faqEntryData, faqContainer) => {
+const createFaqDataContainer = (faqEntryData, faqContainer, index) => {
   const { question, answer } = faqEntryData;
   let visible = "answer-visible";
   let hidden = "answer-hidden";
-  const entryContainer = document.createElement("div");
+  const entryContainer = document.createElement("li");
   entryContainer.className = "question-container";
 
   const entryAnswer = document.createElement("div");
-  entryAnswer.className = "faq answer  answer-hidden";
+  entryAnswer.className = "faq answer answer-hidden";
+  entryAnswer.setAttribute("aria-expanded", "false");
+  entryAnswer.setAttribute("aria-role", "region");
+  entryAnswer.setAttribute("id", `answer-${index}`);
+  entryAnswer.setAttribute("aria-labelledby", `question-${index}`);
   entryAnswer.innerHTML = answer;
 
-  const entryQuestion = document.createElement("div");
-  entryQuestion.className = "faq question chevron right";
+  const entryQuestion = document.createElement("button");
+  entryQuestion.className = "faq button-question question chevron right";
+  entryQuestion.setAttribute("id", `question-${index}`);
+  entryQuestion.setAttribute("aria-controls", `answer-${index}`);
   entryQuestion.innerHTML = question;
 
   entryContainer.append(entryQuestion);
@@ -91,21 +97,24 @@ const createFaqDataContainer = (faqEntryData, faqContainer) => {
     const isVisible = entryAnswer.className.includes(visible);
     const visibleAnswers = document.querySelectorAll(".answer-visible");
     const visibleQuestions = document.querySelectorAll(".bottom");
+    const isExpanded = entryAnswer.getAttribute("aria-expanded") === "true";
 
     if (isVisible) {
       entryAnswer.className = `answer ${hidden}`;
-      entryQuestion.className = "question chevron right";
+      entryQuestion.className = " faq button-question question chevron right";
     } else {
       entryAnswer.className = `answer ${visible}`;
-      entryQuestion.className = "question chevron bottom";
+      entryQuestion.className = "faq button-question question chevron bottom";
     }
+
+    entryAnswer.setAttribute("aria-expanded", !isExpanded ? "true" : "false");
 
     visibleAnswers.forEach((answer) => {
       answer.className = `answer ${hidden}`;
     });
 
     visibleQuestions.forEach((question) => {
-      question.className = "question chevron right";
+      question.className = "faq button-question question chevron right";
     });
   };
 
@@ -122,11 +131,11 @@ const createFaqDataContainer = (faqEntryData, faqContainer) => {
 //START: adding container to html
 const faqList = () => {
   mainPart.innerHTML = "";
-  const faqContainer = document.createElement("div");
+  const faqContainer = document.createElement("ul");
   faqContainer.id = "faq-container";
 
-  faqData.forEach((faqEntryData) => {
-    createFaqDataContainer(faqEntryData, faqContainer);
+  faqData.forEach((faqEntryData, index) => {
+    createFaqDataContainer(faqEntryData, faqContainer, index);
   });
 
   mainPart.append(faqContainer);
@@ -143,7 +152,7 @@ const openAllQuestionsBtn = document.querySelectorAll(".button")[1];
 openAllQuestionsBtn.onclick = () => {
   answers.forEach((answer) => {
     const isVisible = answer.className.includes("answer-visible");
-
+    answer.setAttribute('aria-expanded', 'false');
     if (isVisible) {
       answer.className = `answer answer-hidden`;
     } else {
@@ -155,9 +164,9 @@ openAllQuestionsBtn.onclick = () => {
     const isRight = question.className.includes("right");
 
     if (isRight) {
-      question.className = "question chevron bottom";
+      question.className = "faq button-question question chevron bottom";
     } else {
-      question.className = "question chevron right";
+      question.className = "faq button-question question chevron right";
     }
   });
 };
