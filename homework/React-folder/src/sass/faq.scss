@@ -1,0 +1,45 @@
+@use "variables.scss" as variables;
+
+#faq-containter{
+  margin-left: 40px;
+}
+
+.question{
+  font-weight:bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+
+  &:hover{
+
+    outline: 1px solid  variables.$primaryColor;
+    border-radius: 3px;
+  }
+
+  &-container{
+    margin: 20px 0px;
+ 
+  }
+  
+}
+
+.answer{
+  // padding-left: 40px;
+
+  & p {
+    margin-top: 0;
+  }
+
+  &-hidden{
+    display: none;
+  }
+
+  &-visible{
+    display: block;
+   
+  }
+}
+
+i {
+  color: orange;
+}
+

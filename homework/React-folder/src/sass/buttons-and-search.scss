@@ -1,0 +1,53 @@
+@use "mixins.scss" as mixins;
+@use "variables.scss" as variables;
+
+
+
+
+.button {
+  @include mixins.btnSize();
+ @include mixins.buttonStyle();
+
+  &:hover {
+    @include mixins.hoverBtns()
+  }
+}
+
+.apply {
+  @include mixins.btnSize();
+  background-color: variables.$primaryColor;
+  border-radius: 5px;
+  color: white;
+  border: 0;
+  
+  &:hover {
+    @include mixins.hoverBtns()
+  }
+}
+
+
+.learn-btn {
+  margin: 20px auto;
+  display: block;
+}
+
+.open-close-search{
+  display: flex;
+  justify-content: space-between;
+
+  .open-close{
+    height: 50px;
+  }
+ 
+
+.clear{
+  margin-left: 0px;
+}
+
+  & input[type="text"]{
+    border:1px solid variables.$primaryColor;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    }
+}
